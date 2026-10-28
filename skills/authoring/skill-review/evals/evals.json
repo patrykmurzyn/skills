@@ -1,0 +1,19 @@
+{
+  "skill_name": "skill-review",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "do a check-up of my skills, which ones are actually pulling their weight?",
+      "expected_output": "Runs usage.py, reads the transcripts read-only, separates under-triggering skills from unneeded ones, quotes any repeated corrections, and sends one report with numbered proposals without changing any skill.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "A new model came out yesterday. Do my skills still make sense with it?",
+      "expected_output": "Plans re-running each skill's evals with the new model pinned, explains that a skill whose no-skill arm now passes should be retired rather than fixed, and asks before starting any paid sessions.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}

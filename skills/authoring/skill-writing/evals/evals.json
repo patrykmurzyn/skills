@@ -1,0 +1,19 @@
+{
+  "skill_name": "skill-writing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write the skill from this brief: evals/files/brief-csv-report.md. Put it in a new folder next to the brief.",
+      "expected_output": "A skill folder whose SKILL.md passes validate_skill.py, with a description under about 300 characters that says what it does and when to use it, a body limited to the brief's local facts and baseline failures (no general CSV know-how), and a Gotchas section.",
+      "files": ["evals/files/brief-csv-report.md"],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "This skill keeps loading when people ask about Word documents: evals/files/pdf-forms-skill.md. Fix the description and nothing else.",
+      "expected_output": "The description keeps the PDF form scope, adds a boundary for Word documents without a keyword list, stays under 1024 characters, the body is unchanged and metadata.version is bumped.",
+      "files": ["evals/files/pdf-forms-skill.md"],
+      "assertions": []
+    }
+  ]
+}

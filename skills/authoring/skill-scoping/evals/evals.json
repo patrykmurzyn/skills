@@ -1,0 +1,19 @@
+{
+  "skill_name": "skill-scoping",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I keep telling the agent our API uses cursor pagination with an `after` param and never page numbers. Make a skill for that.",
+      "expected_output": "Concludes this is a short always-on rule that belongs in AGENTS.md (or a lint check), explains why a skill is the wrong mechanism, and does not draft a skill.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "Here's our release checklist in evals/files/release.md. Turn it into a skill.",
+      "expected_output": "A brief that gives each skill one job (for example a router plus stage skills, or one skill with publishing split out), flags npm publishing and tagging as side effects that need explicit invocation, lists triggers and near misses, and runs or proposes a baseline in a fresh agent before any file is written.",
+      "files": ["evals/files/release.md"],
+      "assertions": []
+    }
+  ]
+}

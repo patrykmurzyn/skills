@@ -1,0 +1,25 @@
+{
+  "skill": "skill-authoring",
+  "queries": [
+    {"query": "zrób mi skilla, który robi code review według zasad z CONTRIBUTING.md w tym repo", "should_trigger": true, "split": "train"},
+    {"query": "we just spent an hour getting the release process right - can you turn that into a skill so I never have to explain it again?", "should_trigger": true, "split": "train"},
+    {"query": "my deploy skill is like 600 lines and the agent ignores half of it, can you split it up into something that works", "should_trigger": true, "split": "train"},
+    {"query": "chcę mieć skill do pisania postów na LinkedIn w moim stylu, przykłady są w ~/Documents/posts/", "should_trigger": true, "split": "train"},
+    {"query": "Make a skill for querying our Postgres analytics DB. Schema is in docs/schema.sql and we always filter out test accounts.", "should_trigger": true, "split": "train"},
+    {"query": "can u package the steps from this convo into a SKILL.md that works in both codex and claude code", "should_trigger": true, "split": "train"},
+    {"query": "Mam skill do commitów, ale jest za ogólny i nic nie wnosi. Przerób go porządnie.", "should_trigger": true, "split": "validation"},
+    {"query": "I keep re-explaining to every new session how we name feature flags. what's the best way to make the agent just know it?", "should_trigger": true, "split": "validation"},
+    {"query": "build me a set of small skills for our onboarding docs workflow, one per stage, with one that ties them together", "should_trigger": true, "split": "validation"},
+    {"query": "turn scripts/backup.sh and the notes in BACKUP.md into something the agent can follow on its own", "should_trigger": true, "split": "validation"},
+    {"query": "what's the difference between a skill and a subagent in Claude Code?", "should_trigger": false, "split": "train"},
+    {"query": "install the skills from github.com/vercel-labs/agent-skills for me", "should_trigger": false, "split": "train"},
+    {"query": "list all the skills I have installed right now", "should_trigger": false, "split": "train"},
+    {"query": "write a newsletter post explaining what Agent Skills are and why they matter", "should_trigger": false, "split": "train"},
+    {"query": "add a rule to AGENTS.md that we use pnpm, not npm", "should_trigger": false, "split": "train"},
+    {"query": "create a security-review subagent in .claude/agents that runs on opus", "should_trigger": false, "split": "train"},
+    {"query": "przetłumacz README mojego repo ze skillami na polski", "should_trigger": false, "split": "validation"},
+    {"query": "the python test in tests/test_parser.py fails with a KeyError, fix it", "should_trigger": false, "split": "validation"},
+    {"query": "update my ~/.codex/config.toml so the github MCP server starts on launch", "should_trigger": false, "split": "validation"},
+    {"query": "summarize what this SKILL.md file does in two sentences", "should_trigger": false, "split": "validation"}
+  ]
+}
