@@ -4,7 +4,7 @@ description: Checks a third-party agent skill for hidden instructions, risky scr
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.1.0"
+  version: "0.1.1"
   status: experimental
 ---
 

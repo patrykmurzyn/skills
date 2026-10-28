@@ -4,7 +4,7 @@ description: Tests whether an agent skill is valid, loads on the right requests 
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.2.0"
+  version: "0.2.1"
   status: experimental
 ---
 

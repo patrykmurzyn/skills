@@ -43,15 +43,15 @@ def table() -> str:
         folder = skill_md.parent
         group = folder.parent.name if folder.parent != skills_root else ""
         name = fm.get("name", folder.name)
-        description = " ".join(str(fm.get("description", "")).split()).replace("|", "\\|")
+        description = " ".join(str(fm.get("description", "")).split())
+        description = re.split(r"(?<=\.)\s+(?=Use |Step )", description)[0].replace("|", "\\|")
         link = folder.relative_to(ROOT).as_posix() + "/SKILL.md"
         rows.append(
-            f"| {group} | [`{name}`]({link}) | {description} "
-            f"| {meta.get('version', '')} | {meta.get('status', '')} |"
+            f"| [`{name}`]({link}) | {description} | {group} | {meta.get('status', '')} |"
         )
     if not rows:
         return "_No skills yet._"
-    header = "| Group | Skill | What it does | Version | Status |\n| --- | --- | --- | --- | --- |"
+    header = "| Skill | What it does | Group | Status |\n| --- | --- | --- | --- |"
     return header + "\n" + "\n".join(rows)
 
 

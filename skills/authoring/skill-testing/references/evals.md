@@ -23,7 +23,7 @@ Read this before the first with/without-skill run. The method follows https://ag
 
 - Start with 2–3 cases: varied phrasing and detail, at least one edge case, and the pre-mortem cases from the brief.
 - Each manual correction the user had to make is a candidate case.
-- Fixtures go in `evals/files/`. Fixtures meant to fail validation are fine there.
+- Fixtures go in `evals/files/`. Name a fixture skill `SKILL.fixture.md`, never `SKILL.md`, so installers and scanners don't treat it as a real skill; the runner copies it to `SKILL.md` in its temp workspace. Fixtures meant to fail validation are fine there.
 - Leave `assertions` empty until you have seen the first outputs; you rarely know what good looks like before that.
 
 ## Workspace

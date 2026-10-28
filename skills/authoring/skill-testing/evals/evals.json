@@ -5,7 +5,7 @@
       "id": 1,
       "prompt": "Before I install it, check whether the skill in evals/files/broken-skill/ is valid.",
       "expected_output": "Runs the validator and reports every error with its fix: the name format, the name differing from the folder, the XML tag in the description, the unquoted metadata version and the broken reference link. Does not install the skill.",
-      "files": ["evals/files/broken-skill/SKILL.md"],
+      "files": ["evals/files/broken-skill/SKILL.fixture.md"],
       "assertions": []
     },
     {

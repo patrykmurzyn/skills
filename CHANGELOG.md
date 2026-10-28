@@ -19,6 +19,9 @@ Notable changes to this repo. The format follows [Keep a Changelog](https://keep
 
 ### Changed
 
+- Repo: Claude Code marketplace manifest (`.claude-plugin/marketplace.json`, plugin `authoring`), README rewritten with per-agent install, usage examples and a safety note, `CONTRIBUTING.md`, one-line catalog entries.
+- Eval fixtures that look like skills are named `SKILL.fixture.md` and documented in `evals/files/README.md`; `validate.sh` fails on any nested `SKILL.md`. Observed failure: Codex scans skill folders recursively and loaded both fixtures as real skills.
+- `skill-authoring` 0.3.1, `skill-testing` 0.2.1, `skill-vetting` 0.1.1, `friction-mining` 0.1.1: neutral example names, fixture naming rule, wording of the router's house rules.
 - `skill-authoring` 0.3.0: step 0 (discovery) routes to `friction-mining` and `friction-probe`.
 - `skill-review` 0.2.0: the corrections step reads only sessions where the reviewed skill ran (`usage.py --sessions SKILL`); friction across all history moves to `friction-mining`.
 - `skill-scoping` 0.2.1: friction findings are an evidence source.

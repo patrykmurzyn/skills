@@ -4,7 +4,7 @@ description: Creates a new agent skill or reworks an existing one as small, test
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.3.0"
+  version: "0.3.1"
   status: experimental
 ---
 
@@ -31,7 +31,7 @@ Start where the request starts:
 
 ## House rules
 
-These are the user's rules. They apply to every step and override general habits.
+These are this repo's opinionated rules. They apply to every step and override general habits; a user's own instructions still come first.
 
 - **One job per skill.** Prefer several small skills to one large one. A workflow with stages becomes a router like this one plus one skill per stage, and each stage skill must be useful on its own. When a stage skill is added, renamed or removed, update its router's table in the same change.
 - **Skills may use other skills.** Refer to them by name in backticks and say when to load them ("once the files exist, load `skill-testing`"). Never point at another skill's files by path: install locations differ per agent and per machine.

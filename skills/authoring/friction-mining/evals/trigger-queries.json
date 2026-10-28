@@ -7,7 +7,7 @@
     {"query": "I feel like I keep explaining the same things to every new session. can you dig through my past sessions and find out what I repeat?", "should_trigger": true, "split": "train"},
     {"query": "before I write AGENTS.md for this repo, check my session logs for what the agents keep getting wrong here", "should_trigger": true, "split": "train"},
     {"query": "Codex keeps getting blocked by permissions and I keep interrupting it. how often does that actually happen lately?", "should_trigger": true, "split": "train"},
-    {"query": "znajdź w moich transkryptach powtarzające się błędy agentów w projekcie mega.dev, chcę wiedzieć co poprawić w instrukcjach", "should_trigger": true, "split": "validation"},
+    {"query": "znajdź w moich transkryptach powtarzające się błędy agentów w projekcie acme-web, chcę wiedzieć co poprawić w instrukcjach", "should_trigger": true, "split": "validation"},
     {"query": "mine my claude code history for patterns where the agent wasted time before making its first edit", "should_trigger": true, "split": "validation"},
     {"query": "what hiccups did my coding agents hit this week? use the real transcripts in ~/.claude and ~/.codex", "should_trigger": true, "split": "validation"},
     {"query": "find recurring friction in how my agents work in this project so I know which skills to build next", "should_trigger": true, "split": "validation"},

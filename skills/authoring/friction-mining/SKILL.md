@@ -4,7 +4,7 @@ description: Mines the user's local Claude Code and Codex history for recurring 
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.1.0"
+  version: "0.1.1"
   status: experimental
 ---
 
@@ -86,7 +86,7 @@ uv run scripts/signals.py --session TRANSCRIPT.jsonl --format jsonl
 
 ## Gotchas
 
-- Claude Code folder names under `~/.claude/projects/` drop characters (`mega.dev` becomes `mega-dev`). Pass the real project path; the script matches each entry's `cwd`.
+- Claude Code folder names under `~/.claude/projects/` drop characters (`acme.web` becomes `acme-web`). Pass the real project path; the script matches each entry's `cwd`.
 - `claude -p` runs and desktop app sessions both log `entrypoint` `sdk-cli`, and most Codex sessions log `codex_exec`. Metadata can't tell a probe from real work: only the ledger can.
 - Grepping transcripts for error words misleads. Text such as `InputValidationError` sits in the system prompt of nearly every session. Use the script's structured fields.
 - Subagent transcripts are separate files: Claude keeps them under the session's `subagents/` folder, and Codex gives them their own rollout with a `parent_thread_id`. The summary counts them apart.

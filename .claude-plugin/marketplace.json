@@ -1,0 +1,16 @@
+{
+  "name": "patrykmurzyn",
+  "owner": {
+    "name": "Patryk Murzyn"
+  },
+  "description": "Small, single-job Agent Skills for Claude Code, Codex and other agents.",
+  "plugins": [
+    {
+      "name": "authoring",
+      "source": "./",
+      "description": "Find agent friction, then scope, write, test, review and vet Agent Skills as small single-job skills.",
+      "license": "MIT",
+      "skills": ["./skills/authoring/"]
+    }
+  ]
+}

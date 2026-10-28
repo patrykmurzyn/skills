@@ -46,6 +46,17 @@ if (( ${#skills[@]} == 0 )); then
 fi
 
 status=0
+
+# A SKILL.md nested inside a skill folder (e.g. an eval fixture) is loaded as a real
+# skill by agents that scan recursively, such as Codex. Fixtures use SKILL.fixture.md.
+for skill in "${skills[@]}"; do
+  while IFS= read -r nested; do
+    echo "error: nested SKILL.md would load as a separate skill: ${nested#"$repo"/}" >&2
+    echo "       rename it to SKILL.fixture.md (see evals/files/README.md)" >&2
+    status=1
+  done < <(find "$skill" -mindepth 2 -name SKILL.md)
+done
+
 uv run --quiet "$validator" --strict-spec \
   --require license,metadata.author,metadata.version,metadata.status \
   --format "$format" "${skills[@]}" || status=$?
