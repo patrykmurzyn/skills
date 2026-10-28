@@ -1,0 +1,26 @@
+{
+  "skill_name": "friction-mining",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "What are the most common issues my agents ran into while working in this repo over the last week? Go through my real history on this machine to find common hiccups, wrong tool calls, etc.",
+      "expected_output": "Uses project scope for the current repo and 7 days, creates .friction/ with a .gitignore containing * (and confirms with git check-ignore), runs signals.py with the ledger, confirms each theme in one or two transcripts, keeps only themes seen in 2+ sessions or with high cost, separates trace from self-report, reports at most 7 findings in the findings template with session IDs and short redacted quotes, lists left-out signals with reasons, and asks which to take to skill-scoping without editing any skill, AGENTS.md or settings.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "przejrzyj moją historię z agentami i powiedz, na czym się najczęściej potykają",
+      "expected_output": "No scope given, so asks once whether to mine the current project or all projects, offering a guess based on the current directory and 7 days as the default, before reading any transcript.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 3,
+      "prompt": "Across all my projects this month, which tool calls fail most for my agents and what should I change globally?",
+      "expected_output": "Uses global scope with --days 30 and the working folder ~/.local/state/agent-friction/, reports shell start-up noise lines as one environment finding rather than per tool, groups failures by cause rather than by error string, gives each finding a mechanism hint (environment fix, AGENTS.md line, script, skill) while leaving the decision to skill-scoping, and quotes no secrets, emails or pasted meeting text.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}

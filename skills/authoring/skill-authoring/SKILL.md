@@ -4,7 +4,7 @@ description: Creates a new agent skill or reworks an existing one as small, test
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.2.0"
+  version: "0.3.0"
   status: experimental
 ---
 
@@ -14,6 +14,7 @@ Skills written in one pass tend to be long, generic and untested. Route the work
 
 | Step | Skill | Job | Done when |
 | --- | --- | --- | --- |
+| 0 | `friction-mining` or `friction-probe` | Find what agents struggle with: mine past sessions, or send a fresh agent through a real task | the user picks findings to scope |
 | 1 | `skill-scoping` | Decide whether it should be a skill at all, give it one job, find what a fresh agent gets wrong without it | the user agrees to the brief |
 | 2 | `skill-writing` | Turn the brief into a spec-valid skill folder | files written, validation passes |
 | 3 | `skill-testing` | Prove it triggers on the right requests and beats working without it | evals pass, or the gaps are reported |
@@ -21,6 +22,7 @@ Skills written in one pass tend to be long, generic and untested. Route the work
 
 Start where the request starts:
 
+- "What do my agents keep struggling with?" or "what should I build next?": step 0. Past sessions exist: `friction-mining`. A new project or one specific task: `friction-probe`.
 - New skill, workflow to capture, or "split this skill": step 1.
 - Rework of an existing skill: step 1 in rework mode, so the current version becomes the baseline.
 - "This skill fires on the wrong requests" or "does it work?": step 3, then step 2 for the fix.

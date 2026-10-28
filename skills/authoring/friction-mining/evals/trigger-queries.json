@@ -1,0 +1,25 @@
+{
+  "skill": "friction-mining",
+  "queries": [
+    {"query": "What are the most common issues my agents run into while contributing to zeeza-monorepo for the last week? Go through my real history on this machine to find common hiccups, wrong tool calls, etc.", "should_trigger": true, "split": "train"},
+    {"query": "przejrzyj moją historię z Claude i Codexem z ostatniego tygodnia i znajdź, na czym agenci się najczęściej potykają", "should_trigger": true, "split": "train"},
+    {"query": "which tool calls fail most often for my agents across all my projects this month?", "should_trigger": true, "split": "train"},
+    {"query": "I feel like I keep explaining the same things to every new session. can you dig through my past sessions and find out what I repeat?", "should_trigger": true, "split": "train"},
+    {"query": "before I write AGENTS.md for this repo, check my session logs for what the agents keep getting wrong here", "should_trigger": true, "split": "train"},
+    {"query": "Codex keeps getting blocked by permissions and I keep interrupting it. how often does that actually happen lately?", "should_trigger": true, "split": "train"},
+    {"query": "znajdź w moich transkryptach powtarzające się błędy agentów w projekcie mega.dev, chcę wiedzieć co poprawić w instrukcjach", "should_trigger": true, "split": "validation"},
+    {"query": "mine my claude code history for patterns where the agent wasted time before making its first edit", "should_trigger": true, "split": "validation"},
+    {"query": "what hiccups did my coding agents hit this week? use the real transcripts in ~/.claude and ~/.codex", "should_trigger": true, "split": "validation"},
+    {"query": "find recurring friction in how my agents work in this project so I know which skills to build next", "should_trigger": true, "split": "validation"},
+    {"query": "which of my installed skills do I actually use, and which never fire?", "should_trigger": false, "split": "train"},
+    {"query": "why did the last npm run build fail? here's the error output", "should_trigger": false, "split": "train"},
+    {"query": "have a fresh agent try ticket #42 in this repo and tell me where it gets lost", "should_trigger": false, "split": "train"},
+    {"query": "summarize what I worked on yesterday from my git log", "should_trigger": false, "split": "train"},
+    {"query": "parse this JSONL log file from our API server and count the 500 errors per endpoint", "should_trigger": false, "split": "train"},
+    {"query": "delete my old Claude Code transcripts older than 60 days to free disk space", "should_trigger": false, "split": "train"},
+    {"query": "zrób przegląd moich skilli po wyjściu nowego modelu", "should_trigger": false, "split": "validation"},
+    {"query": "add a rule to AGENTS.md that we always quote globs in zsh", "should_trigger": false, "split": "validation"},
+    {"query": "what's the most common mistake people make when writing Agent Skills?", "should_trigger": false, "split": "validation"},
+    {"query": "search the Sentry issues from last week and group the top errors by root cause", "should_trigger": false, "split": "validation"}
+  ]
+}

@@ -4,7 +4,7 @@ description: Reviews installed agent skills for unused, misfiring or outdated on
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.1.0"
+  version: "0.2.0"
   status: experimental
 ---
 
@@ -26,11 +26,18 @@ It reads the local Claude Code and Codex transcripts, read-only, and reports per
 
 ## 2. Corrections
 
-Search the same transcripts for moments the user corrected the agent or explained the same thing again. Quote each correction word for word, then route it:
+Read only the sessions where the reviewed skill ran:
 
-- during a skill's work: a gotcha and an eval case for that skill (`skill-writing`, then `skill-testing`);
-- repeated with no skill involved: a candidate new skill (`skill-scoping`);
-- a rule the agent knew and broke: set the skill's kind to discipline and run pressure tests (`skill-testing`).
+```sh
+uv run scripts/usage.py --sessions SKILL --days 30
+```
+
+In each, find the moments after the skill loaded where the user corrected the agent or explained the same thing again. Quote each correction word for word, then route it:
+
+- caused by the skill's instructions or a gap in them: a gotcha and an eval case for that skill (`skill-writing`, then `skill-testing`);
+- a rule the skill states and the agent broke: set the skill's kind to discipline and run pressure tests (`skill-testing`).
+
+Repeated friction outside any skill's sessions is not this step: load `friction-mining` for it.
 
 Never copy secrets or personal data from a transcript into a skill.
 

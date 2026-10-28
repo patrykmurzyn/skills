@@ -1,0 +1,19 @@
+{
+  "skill_name": "friction-probe",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I want a fresh agent to work on issue #12 in this repo (the install script should skip skills whose SKILL.md fails validation). Have it explore and propose a fix, and tell me what it struggles with or finds confusing. It's fine to ask dumb questions.",
+      "expected_output": "Fills the probe prompt with the task word for word and no hints, prepares .friction/ with a .gitignore containing *, records git status, asks for a yes naming the agent, model, 30-turn cap and read-only mode before starting the headless run, adds the probe's session ID to the ledger, checks git status afterwards, cross-checks the friction log against the probe's transcript with friction-mining, marks each finding's basis (both, self-report, trace) and a frequency of 1 of 1, and hands the proposed fix over separately without applying it.",
+      "files": [],
+      "assertions": []
+    },
+    {
+      "id": 2,
+      "prompt": "sprawdź, na czym nowy agent by się potknął w tym repo, zanim zacznę pisać AGENTS.md",
+      "expected_output": "Has no task yet, so proposes two real tasks from the project that touch more than one area (from issues or recent fix commits) and asks the user to pick, without launching any agent.",
+      "files": [],
+      "assertions": []
+    }
+  ]
+}

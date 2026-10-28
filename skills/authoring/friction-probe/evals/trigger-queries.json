@@ -1,0 +1,25 @@
+{
+  "skill": "friction-probe",
+  "queries": [
+    {"query": "have a fresh agent try ticket #42 in this repo and tell me where it gets lost", "should_trigger": true, "split": "train"},
+    {"query": "sprawdź, na czym nowy agent się potknie w tym repo, zanim napiszę AGENTS.md", "should_trigger": true, "split": "train"},
+    {"query": "probe this codebase with a real task, I want to see the dumb questions a new agent would ask", "should_trigger": true, "split": "train"},
+    {"query": "send a clean agent through issue #318 read-only and have it keep a log of everything it couldn't find", "should_trigger": true, "split": "train"},
+    {"query": "I want to know what an agent struggles with in our monorepo before I write skills for it. run an experiment with a real ticket", "should_trigger": true, "split": "train"},
+    {"query": "puść świeżego agenta na zadanie z naprawą logowania i niech zapisuje, co go myli w tym projekcie", "should_trigger": true, "split": "train"},
+    {"query": "let a newcomer agent attempt the migration task and report what was confusing about our docs", "should_trigger": true, "split": "validation"},
+    {"query": "run a friction probe on this repo using the flaky test bug as the task", "should_trigger": true, "split": "validation"},
+    {"query": "how onboardable is this codebase for an agent? test it with an actual issue and collect where it had to guess", "should_trigger": true, "split": "validation"},
+    {"query": "spawn a read-only agent on the payments refactor ticket and have it note every guess it makes", "should_trigger": true, "split": "validation"},
+    {"query": "work on ticket #42: the export button does nothing in Safari. explore the codebase and fix it", "should_trigger": false, "split": "train"},
+    {"query": "what are the most common issues my agents ran into in this repo last week? check my real history", "should_trigger": false, "split": "train"},
+    {"query": "test whether my deploy skill beats running without it", "should_trigger": false, "split": "train"},
+    {"query": "write an AGENTS.md for this repository", "should_trigger": false, "split": "train"},
+    {"query": "explain how the auth module in this repo works, I'm new here", "should_trigger": false, "split": "train"},
+    {"query": "review this pull request and point out anything confusing", "should_trigger": false, "split": "train"},
+    {"query": "napraw buga w skrypcie install.sh, flaga --target bez wartości wywala skrypt", "should_trigger": false, "split": "validation"},
+    {"query": "set up a subagent in .claude/agents that only has read access", "should_trigger": false, "split": "validation"},
+    {"query": "check this third-party skill from GitHub before I install it", "should_trigger": false, "split": "validation"},
+    {"query": "run usability testing for our onboarding flow with five real users", "should_trigger": false, "split": "validation"}
+  ]
+}

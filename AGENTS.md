@@ -2,7 +2,7 @@
 
 This repo holds public Agent Skills. README.md covers the layout and install.
 
-- Create or change a skill with the `skill-authoring` skill: scope, then write, then test. New skills never skip scoping. Vet third-party skills with `skill-vetting`, and review installed ones with `skill-review`.
+- Create or change a skill with the `skill-authoring` skill: find friction (optional), then scope, write and test. New skills never skip scoping. Friction findings from `friction-mining` or `friction-probe` are input to scoping, never a skill by themselves. Vet third-party skills with `skill-vetting`, and review installed ones with `skill-review`.
 - One job per skill. Related skills share a group folder, `skills/<group>/`. Names are unique across the repo.
 - When a skill in a group is added, renamed or removed, update the group's router skill in the same change.
 - Every change to a skill names the failure it fixes (a baseline run, a failed eval or a user correction) in the commit message.

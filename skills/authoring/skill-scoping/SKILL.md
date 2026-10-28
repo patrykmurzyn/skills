@@ -4,7 +4,7 @@ description: Decides whether a need deserves an agent skill and defines its sing
 license: MIT
 metadata:
   author: patrykmurzyn
-  version: "0.2.0"
+  version: "0.2.1"
   status: experimental
 ---
 
@@ -18,6 +18,7 @@ Read before you ask. The best sources are concrete and local:
 
 - the conversation: steps that worked, corrections the user made, formats going in and out;
 - project artifacts: `AGENTS.md`, runbooks, scripts, schemas, review comments, issues, and the git history of fixes, which shows what actually went wrong;
+- friction findings from `friction-mining` or `friction-probe`: each comes with sessions, quotes, frequency and cost;
 - the skills your agent already lists.
 
 Generic best-practice articles are not evidence. Ask only what the sources can't settle, and label guesses: "my guess is X, because Y".

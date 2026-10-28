@@ -4,6 +4,7 @@
 """Report in how many sessions each installed skill was used, from local Claude Code and Codex transcripts.
 
 Usage: uv run scripts/usage.py [--days N] [--skills-dir DIR ...] [--format table|json]
+                               [--sessions SKILL]
 
 Reads, read-only:
   Claude Code  ~/.claude/projects/**/*.jsonl          a Skill tool call names the skill
@@ -18,10 +19,13 @@ Options:
   --days N           Only count uses in the last N days (default: 30).
   --skills-dir DIR   Another folder of installed skills (repeatable).
   --format FORMAT    table (default) or json.
+  --sessions SKILL   Instead of the report, list as JSON the transcript files of the
+                     sessions that used SKILL, newest first (for the corrections step).
 
 Examples:
   uv run scripts/usage.py
   uv run scripts/usage.py --days 90 --format json
+  uv run scripts/usage.py --sessions skill-writing
 
 Exit codes: 0 report written, 1 bad arguments.
 """
@@ -125,6 +129,7 @@ def main() -> int:
     parser.add_argument("--days", type=int, default=30, help="look back N days (default: 30)")
     parser.add_argument("--skills-dir", type=pathlib.Path, action="append", default=[], metavar="DIR")
     parser.add_argument("--format", choices=["table", "json"], default="table")
+    parser.add_argument("--sessions", metavar="SKILL")
     args = parser.parse_args()
     if args.days < 1:
         print("Error: --days must be at least 1.", file=sys.stderr)
@@ -138,6 +143,18 @@ def main() -> int:
             row[agent].add(session)
             if row["last_used"] is None or when > row["last_used"]:
                 row["last_used"] = when
+
+    if args.sessions:
+        last: dict[tuple[str, pathlib.Path], dt.datetime] = {}
+        for agent, uses in (("claude", claude_uses(cutoff)), ("codex", codex_uses(cutoff))):
+            for name, when, session in uses:
+                if name == args.sessions and ((agent, session) not in last or when > last[(agent, session)]):
+                    last[(agent, session)] = when
+        rows = sorted(last.items(), key=lambda kv: kv[1], reverse=True)
+        print(json.dumps({"skill": args.sessions, "days": args.days, "sessions": [
+            {"agent": agent, "path": str(path), "last_used": when.isoformat(timespec="seconds")}
+            for (agent, path), when in rows]}, indent=2))
+        return 0
 
     names = installed(DEFAULT_SKILL_DIRS + args.skills_dir)
     report = {
